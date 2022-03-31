@@ -3,7 +3,7 @@
     2. Use of autoreleasepool in certain scenarios for early release of memory if needed
 2. Memory leak
     1. Use tools include memory gauge, Xcode Profiling, deinit, memory graphing etc
-    2. Always be careful about catching self in closure
+    2. Always be careful about capturing self in closure
     3. Consider capturing the value instead of capturing the object
     4. Move the suspected code into a seperate project, and make sure deinit was executed is most effective 
 3. Array and other collection type boundaries
