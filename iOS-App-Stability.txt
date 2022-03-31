@@ -22,6 +22,6 @@ My own absolute guidelines for stable iOS Apps, constantly updating
 7. Database Contention, do not assume database access will always be successful
 8. Device specific testing, testing on all real devices if possible
 9. Concurrency
-    1. Always remember on which queue the code is running
+    1. Always remember on which thread the code is running
     2. Always remember to switch back to main thread if the code is UI related 
     3. Always bare in mind that no type is thread safe in Swift, use semaphore to avoid simultaneous writing
