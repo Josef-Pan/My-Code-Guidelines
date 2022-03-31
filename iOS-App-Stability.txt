@@ -1,10 +1,10 @@
 My own absolute guidelines for stable iOS Apps, constantly updating 
 
 1. Memory usage
-    1. Watching carefully memory usage in devices(not simulator)
+    1. Watching carefully memory usage on devices(not simulator)
     2. Use of autoreleasepool in certain scenarios for early release of memory if needed
 2. Memory leak
-    1. Use tools include memory gauge, Xcode Profiling, deinit, memory graphing etc
+    1. Use tools include memory gauge(on devices, not simulator), Xcode Profiling, deinit, memory graphing etc
     2. Understand when to use weak, and when to use unowned to break retaining cycles
     3. Always be careful about capturing self in closure
     4. Consider capturing the value instead of capturing the object in closures
