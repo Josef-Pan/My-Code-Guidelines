@@ -1,3 +1,5 @@
+My own absolute guidelines for stable iOS Apps
+
 1. Memory usage
     1. Watching carefully memory usage in devices(not simulator)
     2. Use of autoreleasepool in certain scenarios for early release of memory if needed
