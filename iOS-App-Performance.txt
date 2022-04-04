@@ -30,6 +30,7 @@ Those tips are kept upgrading freuquently
     * Practise algorithm weekly or even daily
     
 4. Use Xcode or 3rd-party tools for performance monitoring
+    * MetricKit
     * Google Firebase performance
     * SwiftInfo
     
