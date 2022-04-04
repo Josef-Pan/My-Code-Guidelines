@@ -10,6 +10,13 @@ Those tips are kept upgrading freuquently
     * UITableView/UICollectionView: cache data as stored data ( class property) if possible
     * UITableView/UICollectionView: put heavy calculation/http jobs in a background thread
     * Do not resize image in place to fit the UIViews, do it in advance if possible, especially in UITableView/UICollectionView/UIScrollView
+    * The following things are not hardware accelerated, which means that they need to be done in software (offscreen):
+        # Anything done in a drawRect. If your view has a drawRect, even an empty one, the drawing is not done in hardware, 
+          and there is a performance penalty.
+        # Any layer with the shouldRasterize property set to YES.
+        # Any layer with a mask or drop shadow.
+        # Text (any kind, including UILabels, CATextLayers, Core Text, etc).
+        # Any drawing you do yourself (either onscreen or offscreen) using a CGContext.
     
 2. Language
     * Use final or private for class methods, to avoid dynamic dispatching. (not necessary for release build)
