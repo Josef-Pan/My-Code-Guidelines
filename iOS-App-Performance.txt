@@ -1,5 +1,5 @@
 My Swift iOS Performance Guidelines
-Those tips are kept upgrading freuquently
+Those tips are kept upgrading frequently
 
 
 1. UI
