@@ -1,0 +1,46 @@
+My Swift iOS Performance Guidelines
+Those tips are kept upgrading freuquently
+
+
+1. UI
+    * Use as less as possible on the non-opaque views
+    * Do not use UIView tag unless it is really necessary
+    * Do the heavy calculation of drawing in a background thread
+    * UITableView/UICollectionView: use less subviews and less effects in the cell
+    * UITableView/UICollectionView: cache data as stored data ( class property) if possible
+    * UITableView/UICollectionView: put heavy calculation/http jobs in a background thread
+    * Do not resize image in place to fit the UIViews, do it in advance if possible, especially in UITableView/UICollectionView/UIScrollView
+    
+2. Language
+    * Use final or private for class methods, to avoid dynamic dispatching. (not necessary for release build)
+    * Avoid using KVO if not required the API (AVPlayer would require it). KVO is always dynamic dispatching, and is dozens of times slower than closure.
+    * Objective C is always dynamic dispatching, using legacy code in OBJC only if necessary.
+    * Remove all print from production code, even though this is not required by Apple.
+    * Array holding struct objects is much faster than array holding class, avoid array of class objects 
+    * Consider use linked list instead of array if no sort or lookup is needed
+    * Consider using ContiguousArray for better performance if only lookup is frequently needed
+    * Use reduce, filter, map, compactMap forEach of the Collection types instead of for/while loops
+    * Use named tuple for simple structs instead of struct. It's faster and Equatable by default.
+      typealias RowColumn = (row: Int, col: Int)
+    * Use DispatchQueue.concurrentPerform to do heavy operations on collection types, including array, dictionary etc
+    
+3. Algorithm and data structure
+    * Always think in advance what is the right data structure and what will be the right algorithm 
+    * Replace recursing functions with dynamic planning if possible, dynamic planning is much faster than recursing
+    * Practise algorithm weekly or even daily
+    
+4. Use Xcode or 3rd-party tools for performance monitoring
+    * Google Firebase performance
+    * SwiftInfo
+    
+5. Performance Testing Checklist
+    * How much of the RAM is required for utilising this app?
+    * To verify the speed and response time of APP under different networks and circumstances.
+    * Ensure realistic user experience under several network conditions
+    * Ensure the required results are achieved in case of multiple connectivities
+    * Ensure the application does not get crashed.
+    * Ensuring the mobile applications perform well while using data, Wi-Fi, or other connectivity
+    * Monitoring the uptime and the mobile API usage bottlenecks
+    * To ensure the maximum number of simultaneous users
+    * Finally, to check the mobile app to its limits
+
