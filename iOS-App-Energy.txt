@@ -19,7 +19,9 @@ My iOS Energy Guidelines --- all key points are from Apple Documents
     * Request additional background execution time if needed
 
 3. Resume Activity When Your App Becomes Active
-    * optional func applicationDidBecomeActive(_ application: UIApplication) {     // Resume operations, animations, and UI updates })
+    * optional func applicationDidBecomeActive(_ application: UIApplication) {
+    // Resume operations, animations, and UI updates
+    }
 
 4. Resolving Runaway Background App Crashes
 
@@ -31,9 +33,11 @@ My iOS Energy Guidelines --- all key points are from Apple Documents
     Background        ==  Work takes significant time, such as minutes or hours.
     * Optimally, run your app at a QoS level of utility or lower at least 90% of the time when user activity is not occurring.
     * Special QOS --- Default
-    The priority level of this QoS falls between user-initiated and utility. This QoS is not intended to be used by developers to classify work. Work that has no QoS information assigned is treated as default, and the GCD global queue runs at this level.
+    The priority level of this QoS falls between user-initiated and utility. This QoS is not intended to be used by developers to classify work. 
+    Work that has no QoS information assigned is treated as default, and the GCD global queue runs at this level.
     * Special QOS --- Unspecified
-    This represents the absence of QoS information and cues the system that an environmental QoS should be inferred. Threads can have an unspecified QoS if they use legacy APIs that may opt the thread out of QoS.
+    This represents the absence of QoS information and cues the system that an environmental QoS should be inferred. 
+    Threads can have an unspecified QoS if they use legacy APIs that may opt the thread out of QoS.
     * Quality of Service Inference and Promotion
     A queue has no QoS assigned and an operation with a QoS is added to the queue. ---> The queue and its other operations, if any, remain unaffected.
     A queue has a QoS assigned, and an operation with a QoS is added to the queue. ---> The QoS of the queue is promoted if the QoS of the new operation is higher. Any of the queue’s operations with a lower QoS are also promoted. Any operations with a lower QoS that are added to the queue in the future will infer the higher QoS.
