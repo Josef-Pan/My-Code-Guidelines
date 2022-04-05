@@ -10,8 +10,12 @@ My iOS Energy Guidelines --- all key points are from Apple Documents
     * Downloads that could be deferred
 
 2. Suspend Activity When Your App Becomes Inactive or Moves to the Background
-    * optional func applicationWillResignActive(_ application: UIApplication) {     // Halt operations, animations, and UI updates })
-    * optional func applicationDidEnterBackground(_ application: UIApplication) {     // Halt operations, animations, and UI updates immediately })
+    * optional func applicationWillResignActive(_ application: UIApplication) {
+    // Halt operations, animations, and UI updates
+    }
+    * optional func applicationDidEnterBackground(_ application: UIApplication) {
+    // Halt operations, animations, and UI updates immediately
+    }
     * Request additional background execution time if needed
 
 3. Resume Activity When Your App Becomes Active
