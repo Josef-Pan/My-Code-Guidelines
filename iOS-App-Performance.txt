@@ -27,7 +27,7 @@ Those tips are upgraded regularly
     * Consider use linked list instead of array if no sort or lookup is needed
     * Consider using ContiguousArray for better performance if only lookup is frequently needed
     * Use reduce, filter, map, compactMap forEach of the Collection types instead of for/while loops
-    * Use named tuple for simple structs instead of struct. It's faster and Equatable by default.
+    * Use named tuple for simple structs instead of struct.
       typealias RowColumn = (row: Int, col: Int)
     * Use DispatchQueue.concurrentPerform to do heavy operations on collection types, including array, dictionary etc
     
